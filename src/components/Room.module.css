@@ -141,6 +141,25 @@
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* List View Link */
+.listViewLink {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 160;
+    color: #3E2723;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.listViewLink:hover {
+    opacity: 1;
+}
+
 /* Welcome Overlay */
 .welcomeOverlay {
     position: absolute;

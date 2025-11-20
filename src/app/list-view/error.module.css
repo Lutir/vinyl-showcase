@@ -1,0 +1,121 @@
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+.errorContent {
+  max-width: 600px;
+  text-align: center;
+  background-color: var(--bg-card);
+  border: 3px solid var(--retro-orange);
+  border-radius: var(--border-radius);
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-card);
+}
+
+.icon {
+  color: var(--retro-orange);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text-accent);
+  margin-bottom: 1rem;
+}
+
+.message {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.details {
+  margin: 1.5rem 0;
+  text-align: left;
+  background-color: var(--bg-secondary);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.details summary:hover {
+  color: var(--text-accent);
+}
+
+.errorMessage {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0.5rem 0 0 0;
+  padding: 0.5rem;
+  background-color: var(--bg-primary);
+  border-radius: 4px;
+}
+
+.retryButton {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  background-color: var(--retro-orange);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-button);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.retryButton:hover {
+  background-color: var(--retro-teal);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.retryButton:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-button);
+}
+
+.retryButton:focus {
+  outline: none;
+  box-shadow: var(--shadow-button), 0 0 0 3px var(--retro-yellow);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .errorContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .icon svg {
+    width: 60px;
+    height: 60px;
+  }
+}

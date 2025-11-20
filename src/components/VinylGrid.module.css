@@ -1,0 +1,135 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Smooth fade-in animation for grid */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Empty State Styles */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 4rem 2rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.emptyIcon {
+  color: var(--retro-orange);
+  margin-bottom: 2rem;
+  opacity: 0.6;
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.emptyTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text-accent);
+  margin-bottom: 1rem;
+}
+
+.emptyText {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0;
+}
+
+/* Responsive Grid Breakpoints */
+
+/* Tablet: 768px - 1024px (2-3 columns) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile: < 768px (1-2 columns) */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .emptyState {
+    min-height: 300px;
+    padding: 3rem 1rem;
+  }
+
+  .emptyTitle {
+    font-size: 1.5rem;
+  }
+
+  .emptyText {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile: < 480px (1 column) */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Desktop large: > 1400px (4-5 columns) */
+@media (min-width: 1400px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+/* Smooth transitions for filter changes */
+.grid > * {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Accessibility - reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .grid,
+  .emptyState,
+  .emptyIcon,
+  .grid > * {
+    animation: none;
+  }
+}

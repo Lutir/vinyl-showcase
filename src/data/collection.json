@@ -1,0 +1,84 @@
+{
+  "vinyls": [
+    {
+      "id": "1",
+      "imageUrl": "https://placehold.co/500x500/ff6b35/ffffff?text=Pink+Floyd",
+      "description": "Pink Floyd - The Dark Side of the Moon",
+      "location": "Brooklyn Record Store",
+      "acquiredDate": "2023-06-15",
+      "acquiredYear": 2023
+    },
+    {
+      "id": "2",
+      "imageUrl": "https://placehold.co/500x500/f7b801/ffffff?text=Fleetwood+Mac",
+      "description": "Fleetwood Mac - Rumours",
+      "location": "Manhattan Vintage Shop",
+      "acquiredDate": "2023-08-22",
+      "acquiredYear": 2023
+    },
+    {
+      "id": "3",
+      "imageUrl": "https://placehold.co/500x500/00a896/ffffff?text=The+Beatles",
+      "description": "The Beatles - Abbey Road",
+      "location": "Online Marketplace",
+      "acquiredYear": 2022
+    },
+    {
+      "id": "4",
+      "imageUrl": "https://placehold.co/500x500/6b4423/ffffff?text=Eagles",
+      "description": "Eagles - Hotel California",
+      "location": "Brooklyn Record Store",
+      "acquiredDate": "2022-11-10",
+      "acquiredYear": 2022
+    },
+    {
+      "id": "5",
+      "imageUrl": "https://placehold.co/500x500/e8a87c/ffffff?text=Michael+Jackson",
+      "description": "Michael Jackson - Thriller",
+      "location": "Estate Sale",
+      "acquiredDate": "2024-01-05",
+      "acquiredYear": 2024
+    },
+    {
+      "id": "6",
+      "imageUrl": "https://placehold.co/500x500/ff6b35/ffffff?text=Led+Zeppelin",
+      "description": "Led Zeppelin - IV",
+      "location": "Manhattan Vintage Shop",
+      "acquiredYear": 2023
+    },
+    {
+      "id": "7",
+      "imageUrl": "https://placehold.co/500x500/f7b801/ffffff?text=Bruce+Springsteen",
+      "description": "Bruce Springsteen - Born to Run",
+      "location": "Garage Sale",
+      "acquiredDate": "2023-04-18",
+      "acquiredYear": 2023
+    },
+    {
+      "id": "8",
+      "imageUrl": "https://placehold.co/500x500/00a896/ffffff?text=Marvin+Gaye",
+      "description": "Marvin Gaye - What's Going On",
+      "location": "Online Marketplace",
+      "acquiredDate": "2024-03-12",
+      "acquiredYear": 2024
+    },
+    {
+      "id": "9",
+      "imageUrl": "https://placehold.co/500x500/6b4423/ffffff?text=Carole+King",
+      "description": "Carole King - Tapestry",
+      "location": "Estate Sale",
+      "acquiredYear": 2022
+    },
+    {
+      "id": "10",
+      "imageUrl": "https://placehold.co/500x500/e8a87c/ffffff?text=Nirvana",
+      "description": "Nirvana - Nevermind",
+      "location": "Brooklyn Record Store",
+      "acquiredDate": "2024-02-28",
+      "acquiredYear": 2024
+    }
+  ],
+  "config": {
+    "buyMeVinylUrl": "https://www.buymeacoffee.com/example"
+  }
+}

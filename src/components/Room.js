@@ -27,6 +27,11 @@ export default function Room({ children }) {
                 Buy me a Vinyl
             </a>
 
+            {/* List View Link */}
+            <a href="/list-view" className={styles.listViewLink}>
+                View List 📋
+            </a>
+
             {/* Welcome Message */}
             {showWelcome && (
                 <div className={styles.welcomeOverlay} onClick={() => setShowWelcome(false)}>
