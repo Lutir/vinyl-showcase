@@ -1,0 +1,381 @@
+.standContainer {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.topSurface {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Record Player */
+.recordPlayer {
+    width: 100px;
+    height: 30px;
+    background-color: #5D4037;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.turntable {
+    width: 24px;
+    height: 24px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    border: 2px solid #333;
+}
+
+.arm {
+    width: 30px;
+    height: 4px;
+    background-color: silver;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    transform: rotate(20deg);
+    transform-origin: right center;
+}
+
+/* Books */
+.books {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.book1 {
+    width: 20px;
+    height: 10px;
+    background-color: #8B4513;
+    border-radius: 1px;
+}
+
+.book2 {
+    width: 25px;
+    height: 15px;
+    background-color: #CD5C5C;
+    border-radius: 1px;
+}
+
+/* Shelf */
+.shelf {
+    background-color: var(--color-wood);
+    width: 600px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    border: 10px solid #5D4037;
+    /* Darker wood frame */
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.2));
+}
+
+.cubby {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Shadow inside cubby */
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+.vinylStack {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.stackedSpineWrapper {
+    margin-left: -2px;
+    /* Overlap for packed look */
+    transition: margin 0.3s;
+}
+
+.stackedSpineWrapper:hover {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.spineFiller {
+    width: 8px;
+    height: 108px;
+    background-color: #3E2723;
+    border-radius: 1px;
+    opacity: 0.8;
+}
+
+/* Decor Items */
+.decorItem {
+    position: relative;
+}
+
+/* Candle */
+.candleContainer {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    width: 20px;
+    height: 30px;
+}
+
+.candle {
+    width: 100%;
+    height: 100%;
+    background-color: #F5F5DC;
+    border-radius: 2px;
+    box-shadow: inset -2px 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.flame {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 12px;
+    background-color: #FFD700;
+    border-radius: 50% 50% 20% 20%;
+    box-shadow: 0 0 10px #FF4500;
+    animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker {
+    from {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* Painting Supplies */
+.paintingSupplies {
+    width: 50px;
+    height: 40px;
+    background: #8B4513;
+    /* Box */
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.paintingSupplies::before {
+    content: '';
+    /* Brushes */
+    position: absolute;
+    top: -25px;
+    right: 10px;
+    width: 4px;
+    height: 35px;
+    background-color: #CD853F;
+    box-shadow: -6px 5px 0 #A0522D, -12px 2px 0 #DEB887;
+    transform: rotate(10deg);
+}
+
+.paintingSupplies::after {
+    content: '';
+    /* Tubes */
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 15px;
+    height: 8px;
+    background-color: #FF6347;
+    border-radius: 2px;
+    box-shadow: 20px 0 0 #4682B4;
+}
+
+/* Camera Kit */
+.cameraLens {
+    width: 45px;
+    height: 35px;
+    background-color: #222;
+    border-radius: 4px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.cameraLens::before {
+    content: '';
+    /* Lens */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, #555 0%, #111 100%);
+    border-radius: 50%;
+    border: 2px solid #444;
+}
+
+.cameraLens::after {
+    content: '';
+    /* Flash/Accessory */
+    position: absolute;
+    top: -8px;
+    left: 5px;
+    width: 12px;
+    height: 8px;
+    background-color: #888;
+    border-radius: 1px;
+}
+
+/* Books Stack */
+.booksStack {
+    width: 55px;
+    height: 50px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2px;
+    margin-bottom: 5px;
+    cursor: help;
+    /* Hint at interaction */
+}
+
+.booksStack::before {
+    content: '';
+    width: 100%;
+    height: 14px;
+    background-color: #556B2F;
+    border-radius: 2px;
+    border-left: 3px solid #333;
+    /* Spine detail */
+}
+
+.booksStack::after {
+    content: '';
+    width: 90%;
+    height: 12px;
+    background-color: #8B4513;
+    border-radius: 2px;
+    align-self: flex-end;
+    border-left: 3px solid #555;
+}
+
+/* Third book via box-shadow or child element if needed, keeping it simple with pseudo for now but adding a child would be better for variety. 
+   Let's stick to pseudo for simplicity unless requested more. 
+   Actually, user asked for variety. Let's add a background gradient to simulate more books.
+*/
+.booksStack {
+    background:
+        linear-gradient(to top,
+            #CD5C5C 12px,
+            transparent 12px, transparent 14px,
+            #4682B4 14px,
+            #4682B4 26px,
+            transparent 26px, transparent 28px,
+            #DAA520 28px,
+            #DAA520 40px);
+}
+
+.booksStack::before,
+.booksStack::after {
+    display: none;
+}
+
+/* Override previous simple implementation */
+
+/* Thought Bubbles */
+.thoughtBubblePlayer {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFF;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    color: #333;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    /* Fun handwritten font */
+    border: 1px solid #DDD;
+}
+
+.thoughtBubblePlayer::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px 6px 0;
+    border-style: solid;
+    border-color: #FFF transparent transparent transparent;
+}
+
+.decorWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.thoughtBubbleBook {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFF;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    color: #333;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 20;
+    font-family: var(--font-body);
+}
+
+.thoughtBubbleBook::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px 5px 0;
+    border-style: solid;
+    border-color: #FFF transparent transparent transparent;
+}
+
+.decorWrapper:hover .thoughtBubbleBook {
+    opacity: 1;
+}
+
+.emptySlot {
+    width: 100%;
+    height: 100%;
+}

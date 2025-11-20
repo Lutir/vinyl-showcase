@@ -1,0 +1,26 @@
+.spine {
+    width: 12px;
+    /* Thinner spine */
+    height: 110px;
+    /* Fit in cubby */
+    border-radius: 1px;
+    margin: 0 1px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 1px 0 2px rgba(0, 0, 0, 0.2), 1px 0 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.spine:hover {
+    transform: translateY(-10px) scale(1.1);
+    /* Pull out slightly */
+    z-index: 10;
+}
+
+.spineText {
+    display: none;
+    /* Hide text on thin spines for cleaner look */
+}

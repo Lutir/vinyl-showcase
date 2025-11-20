@@ -1,0 +1,256 @@
+.roomContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.roomContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 140, 0, 0.15);
+    /* Warm Orange Overlay */
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: multiply;
+}
+
+/* Curtain Animation */
+.curtainLeft,
+.curtainRight {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #CD5C5C;
+    /* Warm IndianRed */
+    z-index: 200;
+    transition: transform 2s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+.curtainValance {
+    width: 100%;
+    height: 40px;
+    background: repeating-linear-gradient(45deg,
+            #A0522D,
+            #A0522D 10px,
+            #8B4513 10px,
+            #8B4513 20px);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #FFD700;
+    /* Gold trim */
+}
+
+.curtainLeft {
+    left: 0;
+    transform-origin: left;
+    animation: openCurtainLeft 2.5s forwards 0.5s;
+}
+
+.curtainRight {
+    right: 0;
+    transform-origin: right;
+    animation: openCurtainRight 2.5s forwards 0.5s;
+}
+
+@keyframes openCurtainLeft {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes openCurtainRight {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+/* Buy Button - Vinyl Style (Premium) */
+.buyButton {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 160;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    /* Glassmorphism */
+    backdrop-filter: blur(10px);
+    padding: 10px 20px 10px 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    transition: all 0.3s ease;
+    color: #3E2723;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.buyButton:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.buyButton:hover .vinylIcon {
+    transform: rotate(360deg);
+}
+
+.vinylIcon {
+    width: 36px;
+    height: 36px;
+    background: radial-gradient(circle at 30% 30%, #333, #000);
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Realistic Grooves */
+    background-image: repeating-radial-gradient(#111 0,
+            #111 2px,
+            #222 3px,
+            #222 4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vinylIcon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #CD5C5C, #8B0000);
+    /* Premium Label */
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Welcome Overlay */
+.welcomeOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 150;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: fadeOut 0.5s forwards 4s;
+    /* Auto fade out fallback */
+}
+
+.welcomeBox {
+    background-color: #FFF8DC;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #8B4513;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    font-family: var(--font-heading);
+}
+
+.welcomeBox h1 {
+    color: #3E2723;
+    margin-bottom: 10px;
+}
+
+.welcomeBox p {
+    color: #555;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+}
+
+.clickHint {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+    font-family: var(--font-body);
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.wall {
+    flex: 3;
+    background-color: var(--color-cream);
+    /* Subtle texture for the painted wall */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 0;
+    /* Stand sits directly on floor line */
+}
+
+.floor {
+    flex: 1;
+    background-color: var(--color-wood);
+    /* Wood plank pattern */
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 40px 100%;
+    /* Plank width */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    /* Depth */
+}
+
+/* Rug - Simplified */
+.rug {
+    width: 60%;
+    height: 70%;
+    background-color: #A0522D;
+    /* Muted Sienna */
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: rotateX(20deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.rugPattern {
+    width: 100%;
+    height: 100%;
+    /* Simple border pattern */
+    border: 15px solid #8B4513;
+    background-image: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.1) 100%);
+    box-sizing: border-box;
+}
+
+.rugFringes {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: 100%;
+    border-left: 10px dashed #D2B48C;
+    border-right: 10px dashed #D2B48C;
+    pointer-events: none;
+}

@@ -1,27 +1,23 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Ghibli-inspired Palette - Cozy Yellow Room */
+  --color-cream: #E3C565;
+  /* Warm Yellow/Ochre Walls */
+  --color-moss-green: #2E8B57;
+  /* Deep Green Plants */
+  --color-wood: #8B5A2B;
+  /* Warm Wood Floor/Furniture */
+  --color-sky-blue: #4682B4;
+  /* Keep for accents/posters */
+  --color-text: #3E2723;
+  /* Dark Brown Text */
+  --color-paper: #FFFDF5;
+  --color-rug-red: #CD5C5C;
+  /* Faded Red Rug */
+  --color-pot-terra: #D2691E;
+  /* Terracotta */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-heading: var(--font-montserrat), sans-serif;
+  --font-body: var(--font-open-sans), sans-serif;
 }
 
 * {
@@ -30,13 +26,24 @@ body {
   margin: 0;
 }
 
+body {
+  background-color: var(--color-cream);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
